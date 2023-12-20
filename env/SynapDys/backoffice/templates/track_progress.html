@@ -1,0 +1,16 @@
+<!-- yourapp/templates/yourapp/track_progress.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Track Progress</title>
+</head>
+<body>
+    <h1>Track Progress</h1>
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save Progress">
+    </form>
+    <a href="{% url 'lesson_detail' lesson.id %}">Back to Lesson</a>
+</body>
+</html>

@@ -1,0 +1,15 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ma Page d'Accueil</title>
+</head>
+<body>
+<h1>Bienvenue sur ma page d'accueil personnalisée !</h1>
+<a href="{% url 'lesson_detail' lesson_id=1 %}">Commencer une leçon</a> </br>
+<a href="{% url 'track_progress' lesson_id=1 %}">Suivre ma progression</a>
+
+</body>
+</html>
