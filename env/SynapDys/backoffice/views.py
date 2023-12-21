@@ -27,6 +27,13 @@ def track_progress(request, lesson_id):
     return render(request, template_name='track_progress.html', context={'form': form})
 
 
+def lecon_CM2_Fr_Lecon_Adjectif(request):
+    return render(request, 'lecon_CM2_Fr_Lecon_Adjectif.html')
+
+def lecon_CM2_Fr_Lecon_Adjectif_eval(request):
+    # Logique de la vue
+    return render(request, 'lecon_CM2_Fr_Lecon_Adjectif_eval.html')
+
 def synthese_vocale(request):
     if request.method == 'POST':
         texte = request.POST.get('texte', '')

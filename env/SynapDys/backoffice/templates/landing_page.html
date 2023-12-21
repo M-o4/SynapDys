@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
-    
+    {% load admin_urls %}
     <title>{% block title %}Titre par défaut{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
 
@@ -88,7 +88,7 @@
   <nav>
     <a href="#">Accueil</a>
     <a href="#">Exercice</a>
-    <a href="#">Leçon</a>
+    <a href="{% url 'lecon_CM2_Fr_Lecon_Adjectif_eval' %}">Leçon</a>
     <a href="#" onclick="lireContenu()">Lire le contenu</button>
     <a href="#">Paramètres</a>
     <div class="animation start-home"></div>
