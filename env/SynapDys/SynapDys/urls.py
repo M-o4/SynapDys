@@ -17,7 +17,7 @@ Including another URLconf
 from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
-from backoffice.views import lesson_detail, track_progress, synthese_vocale
+from backoffice.views import lesson_detail, track_progress, synthese_vocale,lecon_CM2_Fr_Lecon_Adjectif , lecon_CM2_Fr_Lecon_Adjectif_eval
 from django.views.generic import TemplateView
 from django.contrib.auth.views import LoginView
 
@@ -31,7 +31,7 @@ urlpatterns = [
     path('lesson/<int:lesson_id>/track_progress/', track_progress, name='track_progress'),
     path('', TemplateView.as_view(template_name='landing_page.html'), name='landing_page'),
     path('synthese_vocale/', synthese_vocale, name='synthese_vocale'),
-    
-    
+    path('lecon_CM2_Fr_Lecon_Adjectif/', lecon_CM2_Fr_Lecon_Adjectif, name='lecon_CM2_Fr_Lecon_Adjectif'),
+    path('lecon_CM2_Fr_Lecon_Adjectif_eval/', lecon_CM2_Fr_Lecon_Adjectif_eval, name='lecon_CM2_Fr_Lecon_Adjectif_eval'),
 ]
 

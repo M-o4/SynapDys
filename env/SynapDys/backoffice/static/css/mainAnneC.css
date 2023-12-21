@@ -1,0 +1,99 @@
+body {
+    font-size: 14px;
+    font-family: 'OpenDyslexic', sans-serif;
+    background: #ffffff;
+    margin: 8em 20em;
+    line-height: 2;
+  }
+
+h1{
+    text-align: center;
+    color: purple;
+}
+h3{
+    font-size: 24px;
+    padding: 0em;
+}
+p{
+    margin-bottom: 2px;
+}
+.rouge{
+    color: rgb(236, 28, 28);
+}
+
+.bleu{
+    color: blue;
+}
+
+.vert{
+    color: green;
+}
+.purple{
+    color: purple;
+}
+
+
+/*---------------------------Zone de bouton ----------------------------------*/
+
+.btn-group button {
+    background-color: #04AA6D; /* Green background */
+    border: 1px solid green; /* Green border */
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+  }
+  
+  /* Clear floats (clearfix hack) */
+  .btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .btn-group button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+  }
+  
+  /* Add a background color on hover */
+  .btn-group button:hover {
+    background-color: #3e8e41;
+  }
+
+/*---------------------------------------------------------------------------------*/
+/*------------------------Page lecon-----------------------------------------------*/
+
+.block-lecon{
+    border: 1px solid black ;
+    padding: 2em 5em;
+    margin: 0em 10em;
+    background-color: rgb(186, 222, 245);
+    border-radius: 5em;
+}
+.block-lecon-exemple{
+    border: 1px solid black ;
+    padding: 2em 5em;
+    margin: 0.1em 10em;
+    background-color: rgb(253, 254, 255);
+    border-radius: 5em;
+}
+
+.titre_partie{
+    background-color: aqua;
+    border: 1px solid blue;
+    border-radius: 10em;
+    text-align: center;
+    margin: 0em 10em;
+    padding: 1px 2px;
+
+}
+
+.h4_lecon{
+    color: orangered;
+    font-size: 20px;
+}
+.exemple{
+    font-weight: bold;
+}
+/*----------------------------------------------------------------------------------*/
+
