@@ -21,3 +21,11 @@ def track_progress(request, lesson_id):
 
     return render(request, template_name='track_progress.html', context={'form': form})
 
+def template(request):
+    return render(request, template_name='template.html')
+
+def lecon_CM2_Fr_Adjectif(request):
+    return render(request, template_name='CM2_Fr_Lecon_Adjectif.html')
+
+def lecon_CM2_Fr_Adjectif_eval(request):
+    return render(request, template_name='CM2_Fr_Lecon_Adjectif_eval.html')

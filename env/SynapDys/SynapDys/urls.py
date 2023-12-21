@@ -19,13 +19,16 @@ from django.contrib import admin
 from django.urls import path, include
 from backoffice.views import lesson_detail, track_progress
 from django.views.generic import TemplateView
+from backoffice import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     
-    path('lesson/<int:lesson_id>/', lesson_detail, name='lesson_detail'),
-    path('lesson/<int:lesson_id>/track_progress/', track_progress, name='track_progress'),
+    path('lesson/<int:lesson_id>/', views.lesson_detail, name='lesson_detail'),
+    path('lesson/<int:lesson_id>/track_progress/', views.track_progress, name='track_progress'),
     path('', TemplateView.as_view(template_name='landing_page.html'), name='landing_page'),
-    
+    path("template/", views.template, name="template"),
+    path("template/primaire/CM2/francais/adjectif/", views.lecon_CM2_Fr_Adjectif, name="CM2_Fr_Adjectif"),   
+    path("template/primaire/CM2/francais/adjectif/eval", views.lecon_CM2_Fr_Adjectif_eval, name="CM2_Fr_Adjectif_eval"),
 ]
 
