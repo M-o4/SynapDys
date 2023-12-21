@@ -1,6 +1,11 @@
+import json,os,base64
 from django.shortcuts import render, get_object_or_404
 from .models import Lesson, Progress
-from .forms import ProgressForm
+from .forms import ProgressForm, TexteForm
+from gtts import gTTS
+from django.http import HttpResponse, JsonResponse
+import os
+
 
 def lesson_detail(request, lesson_id):
     lesson = get_object_or_404(Lesson, pk=lesson_id)
@@ -21,3 +26,19 @@ def track_progress(request, lesson_id):
 
     return render(request, template_name='track_progress.html', context={'form': form})
 
+
+def synthese_vocale(request):
+    if request.method == 'POST':
+        texte = request.POST.get('texte', '')
+
+        # Utilisation de gTTS pour générer la synthèse vocale
+        tts = gTTS(text=texte, lang='fr')
+        audio_data = tts.get_audio_data()
+
+        # Convertir les données audio en base64 pour la lecture directe dans le navigateur
+        audio_base64 = base64.b64encode(audio_data).decode('utf-8')
+
+        return JsonResponse({'audio_base64': audio_base64})
+    else:
+        # Le cas GET retourne simplement le template
+        return render(request, 'synthese_vocale.html')
