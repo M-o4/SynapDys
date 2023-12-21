@@ -1,0 +1,3 @@
+env/SynapDys/SynapDys/__pycache__/*.pyc
+env/SynapDys/backoffice/migrations/__pycache__/*.pyc
+env/SynapDys/backoffice/__pycache__/*.pyc

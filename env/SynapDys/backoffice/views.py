@@ -26,7 +26,6 @@ def track_progress(request, lesson_id):
 
     return render(request, template_name='track_progress.html', context={'form': form})
 
-
 def lecon_CM2_Fr_Lecon_Adjectif(request):
     return render(request, 'lecon_CM2_Fr_Lecon_Adjectif.html')
 
@@ -49,3 +48,6 @@ def synthese_vocale(request):
     else:
         # Le cas GET retourne simplement le template
         return render(request, 'synthese_vocale.html')
+
+def template(request):
+    return render(request, template_name='template.html')
