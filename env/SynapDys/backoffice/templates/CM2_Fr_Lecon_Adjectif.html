@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ma Page d'Accueil</title>
 {% load static %}
@@ -9,41 +10,51 @@
 </head>
 <body>
 <h1>Les adjectifs</h1>
-<a href="#">Leçon</a> 
-<a href="#">Exercices</a>
-<a href="template/primaire/CM2/francais/adjectif/eval">Evaluation</a>
+
+<div class="btn-group">
+    <a href="#">Leçon</a> 
+    <a href="#">Exercices</a>
+    <a href="template/primaire/CM2/francais/adjectif/eval">Evaluation</a>
+</div>
 
 <div class="lecon">
     <h2>Leçon</h2>
 
-    <div>
-        <h3>Retiens l'essentiel</h3>
+    <div class="block-lecon">
 
-            <h4>Definition</h4>
-                <p>L'adjectifs précise ou décrit le nom (ou le pronom) qu'il accompagne. Il s'accorde en genre et en nombre avec lui.</p>
-                <p>L'adjectif peut être placé avant ou après le nom</p>
-                <p class="exemple">Exemple : un petit garçon / une fille petite / des enfants petits</p>
+        <div class="titre_partie"><h3>Retiens l'essentiel</h3></div>
 
-            <h4>Les fonctions de l'adjectif</h4>
-                <p>L'adjectif (ou le participe passé employé comme adjectif) peut être :
+            <h4 class="h4_lecon">Definition</h4>
+                <p><i class="fa-solid fa-play"></i>L'adjectifs précise ou décrit le nom (ou le pronom) qu'il accompagne. Il s'accorde en genre et en nombre avec lui.</p>
+                <p><i class="fa-solid fa-play"></i>L'adjectif peut être placé avant ou après le nom</p>
+                <p class="exemple">Exemple : 
                     <ul>
-                        <li><strong>épithète :</strong> Il est placé juste avant ou après le nom; 
-                            <div class="exemple"> Exemple : Un beau chat endormi</div>
+                        <li><span class="bleu">un</span> <span class="rouge">petit</span> <span class="bleu">garçon</span></li>
+                        <li><span class="bleu">une fille</span> <span class="rouge">petite</span></li>
+                        <li><span class="bleu">des enfants</span> <span class="rouge">petits</span></li>
+                    </ul>
+                </p>
+
+            <h4 class="h4_lecon">Les fonctions de l'adjectif</h4>
+                <p><i class="fa-solid fa-play"></i>L'adjectif (ou le participe passé employé comme adjectif) peut être :
+                    <ul>
+                        <li><strong class="purple">épithète :</strong> Il est placé juste avant ou après le nom; 
+                            <div class="exemple"> Exemple : <span class="bleu">Un</span> <span class="rouge">beau</span> <span class="bleu">chat</span> <span class="rouge">endormi</span></div>
                         </li>
-                        <li><strong>attribut sujet :</strong> il est séparé du nom par un <strong>verbe d'état</strong>; 
-                            <div class="exemple"> Exemple : Le chat est beau et semble endormi</div>
+                        <li><strong class="purple">attribut sujet :</strong> il est séparé du nom par un <strong>verbe d'état</strong>; 
+                            <div class="exemple"> Exemple : <span class="bleu">Le chat</span> <span class="vert">est</span> <span class="rouge">beau</span> <span class="bleu">et</span> <span class="vert">semble</span> <span class="rouge">endormi</span></div>
                         </li>
-                        <li><strong>apposé :</strong> il est séparé du nom par une virgule; 
-                            <div class="exemple"> Exemple : le chat, endormit, n'entend pas le chien, silencieux, qui approche</div>
+                        <li><strong class="purple">apposé :</strong> il est séparé du nom par une virgule; 
+                            <div class="exemple"> Exemple : <span class="bleu">Le chat,</span> <span class="rouge">endormit</span><span class="bleu">, n'entend pas le chien,</span> <span class="rouge">silencieux</span><span class="bleu">, qui approche</span></div>
                         </li>
                     </ul>
                 </p>
-            <h4>Les fonctions de l'adjectif</h4>
-                <p>Pour comparer des qualités ou des défauts, on peut utiliser le <strong>comparatif</strong> et le <strong>superlatif</strong>
+            <h4 class="h4_lecon">Les degrés de l'adjectif</h4>
+                <p<i class="fa-solid fa-play"></i>>Pour comparer des qualités ou des défauts, on peut utiliser le <strong>comparatif</strong> et le <strong>superlatif</strong>
                 en ajoutant des adverbe à l'adjectif</p>
                 <p class="exemple">Exemple : les comparatifs :
                     <ul>
-                        <li>Tom est plus grand que Pauline.</li>
+                        <li><span class=""></span>Tom est <span class=""></span>plus <span class=""></span>grand <span class=""></span>que Pauline.</li>
                         <li>Tom est plus petit que Pauline.</li>
                         <li>Tom est aussi grand que Pauline.</li>
                     </ul>
@@ -60,10 +71,11 @@
         <div class="astuce">
             <p>L'adjectif s'accorde avec le premier nom ou le nom principale</p>
         </div>
-
+    </div>
         <div>
+        <div class="block-lecon-exemple">
         <h3>Regarde comment on fait !</h3>
-            <h4>Identifier les adjectifs et leur fonction</h4>
+            <h4 class="h4_lecon">Identifier les adjectifs et leur fonction</h4>
                 <div class="encadrer_consigne"> 
                     <p class="Consigne">Souligne les adjectifs et indique leur fonction</p>
                     <p class="exemple">Le petit canard semble triste</p>
@@ -95,7 +107,7 @@
                 <p><strong>triste</strong> = attribut du sujet <em>canard</em></p>
             </div> 
         </div>  
-
+        </div>
                    
                         
                         
