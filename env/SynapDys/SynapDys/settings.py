@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'backoffice'
+    'backoffice',
+    
 ]
 
 MIDDLEWARE = [
@@ -126,5 +127,10 @@ STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
+STATICFILES_DIRS = [
+    # Ajoutez le dossier static de l'application backoffice
+    os.path.join(BASE_DIR, 'backoffice', 'static'),
+]
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

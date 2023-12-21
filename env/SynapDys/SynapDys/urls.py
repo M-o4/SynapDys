@@ -17,15 +17,21 @@ Including another URLconf
 from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
-from backoffice.views import lesson_detail, track_progress
+from backoffice.views import lesson_detail, track_progress, synthese_vocale
 from django.views.generic import TemplateView
+from django.contrib.auth.views import LoginView
+
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    
+    path('login/', LoginView.as_view(), name='login'),
     path('lesson/<int:lesson_id>/', lesson_detail, name='lesson_detail'),
     path('lesson/<int:lesson_id>/track_progress/', track_progress, name='track_progress'),
     path('', TemplateView.as_view(template_name='landing_page.html'), name='landing_page'),
+    path('synthese_vocale/', synthese_vocale, name='synthese_vocale'),
+    
     
 ]
 

@@ -1,0 +1,48 @@
+<!-- synthese_vocale.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    
+    <title>{% block title %}Synthèse Vocale{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <!--<script src="{% static 'js/main.js' %}"></script>-->
+</head>
+<body>
+    <h1>Synthèse Vocale</h1>
+
+    <form id="syntheseForm">
+        {% csrf_token %}
+        <label for="texte">Texte à lire :</label>
+        <textarea id="texte" name="texte" rows="4" cols="50"></textarea>
+        <br>
+        <button type="button" onclick="lireTexte()">Lire le texte</button>
+    </form>
+
+    <audio controls id="audioPlayer" style="display: none;"></audio>
+
+    <script>
+        fetch('{% url 'synthese_vocale' %}', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'X-CSRFToken': document.getElementsByName('csrfmiddlewaretoken')[0].value,
+            },
+            body: 'texte=' + encodeURIComponent(texte),
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Mettre à jour le lecteur audio avec les données audio générées
+            var audioPlayer = document.getElementById('audioPlayer');
+            audioPlayer.src = 'data:audio/wav;base64,' + data.audio_base64;
+        
+            // Jouer l'audio
+            audioPlayer.play();
+        });
+        
+
+    </script>
+</body>
+</html>

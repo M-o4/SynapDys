@@ -1,15 +1,103 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ma Page d'Accueil</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    
+    <title>{% block title %}Titre par défaut{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+
+    
+  
+    
 </head>
 <body>
-<h1>Bienvenue sur ma page d'accueil personnalisée !</h1>
-<a href="{% url 'lesson_detail' lesson_id=1 %}">Commencer une leçon</a> </br>
-<a href="{% url 'track_progress' lesson_id=1 %}">Suivre ma progression</a>
+
+  <div id="paramBtn">Paramètres d'accessibilité</div>
+
+  <!-- Fenêtre modale -->
+  <div class="modal" id="paramModal" style="z-index: 1000;">
+      <!-- Contenu de la fenêtre modale -->
+  </div>
+
+  <!-- Fenêtre modale -->
+  <div class="modal" id="paramModal" style="z-index: 1000;">
+      <div class="modal-content">
+          <h2>Accessibilité</h2>
+          <label>
+              Contrastes:
+              <select id="contrastes">
+                  <option value="defaut">Défaut</option>
+                  <option value="renforces">Renforcés</option>
+                  <option value="inverses">Inversés</option>
+              </select>
+          </label>
+          <label>
+              Police (dyslexie):
+              <select id="police">
+                  <option value="defaut">Défaute</option>
+                  <option value="adaptee">Adaptée</option>
+              </select>
+          </label>
+          <label>
+              Interlignage:
+              <select id="interlignage">
+                  <option value="defaut">Défaut</option>
+                  <option value="adaptee">Adaptée</option>
+              </select>
+          </label>
+          <label>
+              Justification:
+              <select id="justification">
+                  <option value="defaut">Défaut</option>
+                  <option value="adaptee">Adaptée</option>
+              </select>
+          </label>
+          <button onclick="appliquerParametres()">Appliquer</button>
+          <button onclick="fermerModal()">Fermer</button>
+      </div>
+  </div>
+
+  <script>
+    // Fonction pour ouvrir la fenêtre modale
+    document.getElementById("paramBtn").addEventListener("click", function() {
+        document.getElementById("paramModal").style.display = "flex";
+    });
+
+    // Fonction pour fermer la fenêtre modale
+    function fermerModal() {
+        document.getElementById("paramModal").style.display = "none";
+    }
+
+    // Fonction pour appliquer les paramètres
+    function appliquerParametres() {
+        var contrastes = document.getElementById("contrastes").value;
+        var police = document.getElementById("police").value;
+        var interlignage = document.getElementById("interlignage").value;
+        var justification = document.getElementById("justification").value;
+
+        // Ajoutez votre logique pour appliquer les paramètres ici
+
+        // Ferme la fenêtre modale
+        fermerModal();
+    }
+</script>
+
+  <nav>
+    <a href="#">Accueil</a>
+    <a href="#">Exercice</a>
+    <a href="#">Leçon</a>
+    <a href="#" onclick="lireContenu()">Lire le contenu</button>
+    <a href="#">Paramètres</a>
+    <div class="animation start-home"></div>
+    <img src="{% static 'images/mascotte.png' %}" alt="Mascotte SynapDys">
+  </nav>
+
+  <div>
+    {% block content %}{% endblock %}
+  </div>
 
 </body>
 </html>

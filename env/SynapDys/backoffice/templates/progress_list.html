@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Progress List</h2>
+  {% for entry in progress %}
+    <div>
+      <p>Exercise: {{ entry.exercise.title }}</p>
+      <p>Completed: {{ entry.completed }}</p>
+    </div>
+  {% endfor %}
+{% endblock %}
